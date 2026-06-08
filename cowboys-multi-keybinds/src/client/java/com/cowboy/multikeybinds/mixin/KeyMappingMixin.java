@@ -2,7 +2,7 @@ package com.cowboy.multikeybinds.mixin;
 
 import com.cowboy.multikeybinds.client.MultiBindManager;
 import com.cowboy.multikeybinds.client.MultiKey;
-import net.minecraft.client.InputConstants;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -46,14 +46,14 @@ public abstract class KeyMappingMixin implements MultiKey {
 		this.clickCount++;
 	}
 
-	@Inject(method = "set(Lnet/minecraft/client/InputConstants$Key;Z)V", at = @At("HEAD"))
+	@Inject(method = "set(Lcom/mojang/blaze3d/platform/InputConstants$Key;Z)V", at = @At("HEAD"))
 	private static void mkb$onSet(InputConstants.Key key, boolean held, CallbackInfo ci) {
 		for (KeyMapping km : MultiBindManager.bindingsForExtra(key)) {
 			((MultiKey) (Object) km).mkb$setHeld(held);
 		}
 	}
 
-	@Inject(method = "click(Lnet/minecraft/client/InputConstants$Key;)V", at = @At("HEAD"))
+	@Inject(method = "click(Lcom/mojang/blaze3d/platform/InputConstants$Key;)V", at = @At("HEAD"))
 	private static void mkb$onClick(InputConstants.Key key, CallbackInfo ci) {
 		for (KeyMapping km : MultiBindManager.bindingsForExtra(key)) {
 			((MultiKey) (Object) km).mkb$press();

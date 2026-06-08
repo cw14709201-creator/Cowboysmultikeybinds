@@ -1,6 +1,6 @@
 package com.cowboy.multikeybinds.client;
 
-import net.minecraft.client.InputConstants;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -133,7 +133,7 @@ public class MultiBindScreen extends Screen {
 		if (this.minecraft == null) {
 			return;
 		}
-		long h = this.minecraft.getWindow().getWindow();
+		long h = GLFW.glfwGetCurrentContext();
 		for (int kc : CANDIDATE_KEYS) {
 			if (GLFW.glfwGetKey(h, kc) == GLFW.GLFW_PRESS) {
 				prevKeyDown.add(kc);
@@ -151,7 +151,7 @@ public class MultiBindScreen extends Screen {
 		if (capturing == null || this.minecraft == null) {
 			return;
 		}
-		long h = this.minecraft.getWindow().getWindow();
+		long h = GLFW.glfwGetCurrentContext();
 
 		// Esc cancels capture without binding.
 		if (GLFW.glfwGetKey(h, GLFW.GLFW_KEY_ESCAPE) == GLFW.GLFW_PRESS) {

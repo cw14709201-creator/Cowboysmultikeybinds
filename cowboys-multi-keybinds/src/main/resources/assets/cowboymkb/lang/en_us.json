@@ -1,5 +1,5 @@
 {
-	"key.categories.cowboymkb": "Cowboy Multi Keybinds",
+	"key.category.cowboymkb.main": "Cowboy Multi Keybinds",
 	"key.cowboymkb.open_menu": "Open Multi-Keybinds Menu",
 	"screen.cowboymkb.title": "Multi Keybinds — add a 2nd key to any bind",
 	"screen.cowboymkb.subtitle": "Click a control's button, then press the extra key or mouse button.",

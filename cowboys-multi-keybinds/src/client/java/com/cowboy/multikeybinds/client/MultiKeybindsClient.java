@@ -4,8 +4,10 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,10 +21,15 @@ public class MultiKeybindsClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		// Keybind categories are now Category objects (1.21.9+), not strings.
+		KeyMapping.Category category = KeyMapping.Category.register(
+				ResourceLocation.fromNamespaceAndPath(MOD_ID, "main"));
+
 		openMenuKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
 				"key.cowboymkb.open_menu",
+				InputConstants.Type.KEYSYM,
 				GLFW.GLFW_KEY_RIGHT_BRACKET,
-				"key.categories.cowboymkb"
+				category
 		));
 
 		// Load saved assignments, then bind them to the real KeyMapping objects
