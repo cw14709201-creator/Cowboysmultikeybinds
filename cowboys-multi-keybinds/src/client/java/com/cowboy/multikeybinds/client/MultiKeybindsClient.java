@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ public class MultiKeybindsClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		// Keybind categories are now Category objects (1.21.9+), not strings.
 		KeyMapping.Category category = KeyMapping.Category.register(
-				ResourceLocation.fromNamespaceAndPath(MOD_ID, "main"));
+				Identifier.fromNamespaceAndPath(MOD_ID, "main"));
 
 		openMenuKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
 				"key.cowboymkb.open_menu",
