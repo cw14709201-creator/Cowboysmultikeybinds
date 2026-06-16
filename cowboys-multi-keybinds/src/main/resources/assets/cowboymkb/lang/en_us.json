@@ -1,11 +1,22 @@
 {
-	"key.category.cowboymkb.main": "Cowboy Multi Keybinds",
+	"key.categories.cowboymkb": "Cowboy Multi Keybinds",
 	"key.cowboymkb.open_menu": "Open Multi-Keybinds Menu",
-	"screen.cowboymkb.title": "Multi Keybinds — add a 2nd key to any bind",
-	"screen.cowboymkb.subtitle": "Click a control's button, then press the extra key or mouse button.",
-	"screen.cowboymkb.press": "Press a key or mouse button…  (Esc to cancel)",
+
+	"screen.cowboymkb.title": "Multi Keybinds",
+	"screen.cowboymkb.how_to": "Click any control's button \u2192 press a key \u2192 that key becomes its 2nd trigger.",
+	"screen.cowboymkb.search": "Search controls...",
+	"screen.cowboymkb.press": "Press a key or mouse button...  (Esc to cancel)",
+
 	"button.cowboymkb.unset": "+ Add 2nd key",
 	"button.cowboymkb.done": "Done",
 	"button.cowboymkb.prev": "< Prev",
-	"button.cowboymkb.next": "Next >"
+	"button.cowboymkb.next": "Next >",
+	"button.cowboymkb.reset_all": "Reset All",
+
+	"tooltip.cowboymkb.rebind": "Click to assign a second key or mouse button to this control. Both the original key and the new one will trigger the same action.",
+	"tooltip.cowboymkb.clear": "Remove this control's second key. The original key still works normally.",
+	"tooltip.cowboymkb.prev": "Go to the previous page of controls.",
+	"tooltip.cowboymkb.next": "Go to the next page of controls.",
+	"tooltip.cowboymkb.done": "Close this menu and return to the game.",
+	"tooltip.cowboymkb.reset_all": "Remove ALL second key assignments at once. This cannot be undone."
 }
