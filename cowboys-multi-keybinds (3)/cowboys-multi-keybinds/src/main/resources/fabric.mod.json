@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "cowboymkb",
+	"version": "${version}",
+	"name": "Cowboy's Multi Keybinds",
+	"description": "Add a second key (or mouse button) to ANY keybind. Bind 'attack' to both the normal key AND B, etc. Open the menu with a key (default: ] right bracket) and give any control a 2nd trigger.",
+	"authors": [
+		"Cowboy"
+	],
+	"contact": {},
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.cowboy.multikeybinds.client.MultiKeybindsClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "multikeybinds.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

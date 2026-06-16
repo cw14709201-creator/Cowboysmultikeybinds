@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.cowboy.multikeybinds.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"KeyMappingMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
